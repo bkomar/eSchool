@@ -77,15 +77,15 @@
         var idSubject = pathArray[3];
         var idClass = pathArray[5];
 
-        $.getJSON('http://localhost:8080/classes/'+idClass, function (data) {
+        $.getJSON('/classes/'+idClass, function (data) {
           $('<span>'+data.className+'</span>').appendTo('#classTitle');
         });
 
-        $.getJSON('http://localhost:8080/subjects/'+idSubject, function (data) {
+        $.getJSON('/subjects/'+idSubject, function (data) {
           $('<span>'+data.subjectName+'</span>').appendTo('#subjectTitle');
         });
 
-        $.getJSON('http://localhost:8080/homeworks/subjects/'+idSubject+'/classes/'+idClass, function (data) {
+        $.getJSON('/homeworks/subjects/'+idSubject+'/classes/'+idClass, function (data) {
           $.each(data, function(key, val) {
                 var tr=$('<tr></tr>');
                 $('<td>'+val.date+'</td>').appendTo(tr);
@@ -95,7 +95,7 @@
             });
         });
 
-        $.getJSON('http://localhost:8080/journals/subjects/'+idSubject+'/classes/'+idClass, function (data) {
+        $.getJSON('/journals/subjects/'+idSubject+'/classes/'+idClass, function (data) {
             $.each(data, function(key, val) {
                 var tr1=$('<tr></tr>');
                 var tr2=$('<tr></tr>');

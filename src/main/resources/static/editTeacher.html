@@ -174,7 +174,7 @@
 	console.log(formData);
 	$.ajax({
 		type: "PUT",
-		url: "http://localhost:8080/" + endpoint + "/" + subjectId,
+		url: "/" + endpoint + "/" + subjectId,
 		data: formData,
 		success: function(){ 
 			console.log("success");
@@ -185,7 +185,7 @@
 	});
 })
 		if (window.location.href.indexOf("student") > -1) {
-			$.getJSON('http://localhost:8080/students/' + subjectId, function (data) {
+			$.getJSON('/students/' + subjectId, function (data) {
 				console.log(data);
 				// var dt = new Date(data.dateOfBirth);
 				// var mnth = ("0" + (dt.getMonth() + 1)).slice(-2);
@@ -201,7 +201,7 @@
 				$("#mail").attr("value", data.email);
 				$("#mobile").attr("value", data.phone);
 			});
-			$.getJSON('http://localhost:8080/classes', function (data2) {
+			$.getJSON('/classes', function (data2) {
 				console.log(data2);
 				$.each(data2, function (i, item) {
 					$('#selectClass').append($('<option>', { 
@@ -212,7 +212,7 @@
 			$("#mydropdownlist").val("0").change();
 		}
 		else{
-			$.getJSON('http://localhost:8080/teachers/' + subjectId, function (data) {
+			$.getJSON('/teachers/' + subjectId, function (data) {
 				console.log(data);
 				$("#fname").attr("value", data.firstname);
 				$("#lname").attr("value", data.lastname);

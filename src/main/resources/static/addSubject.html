@@ -90,14 +90,14 @@ color: transparent;
 				var formData = JSON.stringify(obj);
 				$.ajax({
 					type: "POST",
-					url: "http://localhost:8080/subjects",
+					url: "/subjects",
 					data: formData,
 					success: function(){ console.log(formData);},
 					dataType: "json",
 					contentType : "application/json"
 				});
 			})
-			$.getJSON('http://localhost:8080/subjects', function(data) {
+			$.getJSON('/subjects', function(data) {
 				console.log(data);
 				$("#newName").attr("value", data.newSubjectName);
 			});

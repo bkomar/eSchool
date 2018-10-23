@@ -116,7 +116,7 @@
 		    	var pathArray = window.location.pathname.split('/');
         		var studentId = pathArray[2];
                 $("#homePage").attr("href", "/students/" + studentId + "/profile");
-                var ulr = 'http://localhost:8080/diaries/' + studentId;
+                var ulr = '/diaries/' + studentId;
 		    	var months = ["Січня", "Лютого", "Березня", "Квітня", "Травня", "Червня",
 		    			"Липня", "Серпня", "Вересня", "Жовтня", "Листопада", "Грудня"];
 				$(document).ready(function () {

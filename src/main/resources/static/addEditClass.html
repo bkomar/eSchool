@@ -97,7 +97,7 @@
     </form>
 </div>
 <script type="text/javascript">
-    if (window.location.href.toString() == "http://localhost:8080/classes/add"){
+    if (window.location.href.toString() == "/classes/add"){
 
         $(document).ready(function () {
             $("title").html("Додати клас")
@@ -130,7 +130,7 @@
             var pathArray = window.location.pathname.split('/');
             var classId = pathArray[2];
 
-            $.getJSON('http://localhost:8080/classes/'+classId, function (data) {
+            $.getJSON('/classes/'+classId, function (data) {
                 console.log(data);
                 $("#clsName").attr("value", data.className);
                 $("#clsYear").attr("value", data.classYear)

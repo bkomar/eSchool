@@ -72,10 +72,10 @@
 
     <script type="text/javascript">
     $(document).ready(function () {
-        $.getJSON('http://localhost:8080/journals/teachers/1', function (data) {
+        $.getJSON('/journals/teachers/1', function (data) {
             $.each(data, function(key, val) {
                 var tr=$('<tr></tr>');
-                var ref = 'http://localhost:8080/journals/subjects/'+val.idSubject+'/classes/'+val.idClass+'/view';
+                var ref = '/journals/subjects/'+val.idSubject+'/classes/'+val.idClass+'/view';
                 $('<td>'+'<a href='+ref+'>'+val.subjectName+'</a>'+'</td>').appendTo(tr);
                 $('<td>'+val.className+'</td>').appendTo(tr);
                 $('<td>'+val.startDate+"-"+val.endDate+'</td>').appendTo(tr);

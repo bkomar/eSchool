@@ -9,7 +9,7 @@
 
         $(document).ready(function() {
             $.ajax({
-                url: "http://localhost:8080/teachers/15"
+                url: "/teachers/15"
             }).then(function(data) {
                 var date = new Date(data.dateOfBirth).toLocaleDateString();
                 $('#title').append(data.firstname + ' ' + data.lastname );
@@ -23,7 +23,7 @@
                 $('#statistics').attr("href", "/stats");
                 $('#edit').attr("href", "/teacher/" + id + "/edit");
             });
-            $.getJSON('http://localhost:8080/subjects/teachers/1', function (data) {
+            $.getJSON('/subjects/teachers/1', function (data) {
                 $.each(data, function(key, val) {
                      $('<li>'+val.subjectName+'</li>').appendTo('#list');
                 });

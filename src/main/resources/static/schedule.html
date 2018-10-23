@@ -1393,7 +1393,7 @@ color:grayText;
 
 		$(document).ready(function() {
 
-			$.getJSON('http://localhost:8080/subjects', function (data) {
+			$.getJSON('/subjects', function (data) {
 				console.log(data);
 				var subjectNames = [];
 				$.each(data, function(key, value) {
@@ -1405,7 +1405,7 @@ color:grayText;
 				}
 			});
 			
-			$.getJSON('http://localhost:8080/classes', function(data){
+			$.getJSON('/classes', function(data){
 					console.log(data);
 					var classNames = [];
 					$.each(data, function(key, value) {
